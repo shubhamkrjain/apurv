@@ -65,7 +65,7 @@ tags = {
 //download images from github
 resource "null_resource" "image" {
   provisioner "local-exec" {
-    command = "git clone https://github.com/shubhamkrjain/awstask1.git images"
+    command = "git clone https://github.com/apurvwagh/My-repo.git images"
   }
 }
 
@@ -112,7 +112,7 @@ resource "null_resource" "nulllocal2"  {
 
 //make s3 bucket
 resource "aws_s3_bucket" "shubh" {
-  bucket = "harrypottertask3"
+  bucket = "apurvbuckecttask1"
   acl = "public-read"
  
   tags = {
@@ -214,7 +214,7 @@ provisioner "remote-exec" {
       "sudo mkfs.ext4  /dev/xvdh",
       "sudo mount  /dev/xvdh  /var/www/html",
       "sudo rm -rf /var/www/html/*",
-      "sudo git clone https://github.com/shubhamkrjain/awstask1.git /var/www/html/",
+      "sudo git clone https://github.com/apurvwagh/My-repo.git /var/www/html/",
       "sudo su << EOF",
             "echo \"${aws_cloudfront_distribution.my_distribution.domain_name}\" >> /var/www/html/path.txt",
             "EOF",
